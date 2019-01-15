@@ -1,0 +1,22 @@
+ def sumInterval(InputList):
+     combinedList=[]
+     sumInterval = 0
+     newList = []
+     k = 0                                          # μετρητης για το μηκος της λιστας
+     for i in range(len(InputList)):
+         combinedList = combinedList + InputList[i] # ενονω τις λιστες
+     combinedList = sorted(combinedList)            # βαζω σε αυξουσα σειρα την λιστα
+     for element in combinedList:                   # βγαζω τους διπλους αριθμους
+         if element not in newList:
+             newList.append(element)
+             k = k + 1
+     newList = sorted(newList)                                  # ταξινομω την καινουρια λιστα
+     for i in range(k-1):                                       # μετραω τα διαστηματα μεταξυ των
+         sumInterval = sumInterval + newList[i+1] - newList[i]  # αριθμων για να βρω το συνολο τους
+     return sumInterval
+
+ InputList =[[1,2],[6, 10],[11, 15]]
+ print(InputList)
+
+ InputList = sumInterval(InputList)
+ print(InputList)
