@@ -3,9 +3,9 @@ i = 0
 lista = []
 while i < 10000:
     print('Type start and end of range separated with space')
-    range = [int(x) for x in input().split()]
-    lista.append(range)
-    if input('want more range? \n press Y for more \n press N to calculate') == 'Y' :
+    mrange = [int(x) for x in input().split()]
+    lista.append(mrange)
+    if input('Want another range? \n press Y for more \n press N to calculate') == 'Y':
         i += 1
     else:
         break
@@ -15,7 +15,7 @@ def sumintervals(lista):
  lowerbounds = []
  upperbounds = []
  for i in lista:
-    print(i)
+    # print(i)
     lowerbound1 = []
     upperbound1 = []
     lowerbound = i[0]
@@ -56,5 +56,6 @@ def sumintervals(lista):
     else:
         sum = sum + upperbound - lowerbound
  return sum
+
 
 print('Sum is:', sumintervals(lista))
